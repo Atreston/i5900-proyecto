@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+    <style>
+        h1{
+            font-family: Verdana;
+            font-size: 18px;
+            font-style: bold;
+            color: Tomato;
+        }
+        
+        body{
+            background:LightGray;
+            color: ;
+        }
+        
+        p{
+            font-size:20px;
+            color: gray;
+        }
+    </style>
+    
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+        <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+        <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+        
+        <!-- Icono de acceso directo y pantalla completa -->
+        <meta charset="utf-8">
+        <meta charset="UTF-8">
+            <title>Ropa la Fanny</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="mobile-web-app-capable" content="yes">
+        
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css" /> 
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="http:////code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+        <link rel="icon" sizes="196x196" href="https://icon-icons.com/icons2/38/PNG/512/pants_4789.png">
+        <link rel="shotcut-icon" sizes="196x196" href="https://icon-icons.com/icons2/38/PNG/512/pants_4789.png">
+        
+        <!-- Script para iconos externos -->
+        <link href="https://unpkg.com/ionicons@4.4.4/dist/css/ionicons.min.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <ons-page>
+            <ons-toolbar>
+                <div class="center">Ropa de Fanny</div>
+            </ons-toolbar>
+
+            <ons-tabbar swipeable position="top">
+                <ons-tab page="tab1.html" label="Buscar" icon="search" active-icon="ion-md-man"></ons-tab>
+                <ons-tab page="tab2.html" label="Agregar" icon="ion-md-add-circle" active-icon="ion-md-man"></ons-tab>
+                <ons-tab page="tab3.html" label="Eliminar" icon="trash" active-icon="ion-md-man"></ons-tab>
+                <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
+            </ons-tabbar>
+        </ons-page>
+
+        <script>
+            document.addEventListener('prechange', function(event) {
+                document.querySelector('ons-toolbar .center')
+                .innerHTML = event.tabItem.getAttribute('label');
+            });
+        </script>
+        
+    </body>
+</html>

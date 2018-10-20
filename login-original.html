@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        h1{
+            font-family: Verdana;
+            font-size: 18px;
+            font-style: bold;
+            color: Tomato;
+        }
+        
+        body{
+            background:LightGray;
+            color: ;
+        }
+        
+        p{
+            font-size:20px;
+            color: gray;
+        }
+    </style>
+    
+    <head>
+        <link rel="stylesheet" href="/node_modules/onsenui/css/onsenui.css">
+        <link rel="stylesheet" href="/node_modules/onsenui/css/onsen-css-components.min.css">
+        
+        
+        <script src="/node_modules/onsenui/js/onsenui.min.js"></script>
+        
+        <meta charset="utf-8">
+        <meta charset="UTF-8">
+        <!-- Nombre de la aplicacion en general -->
+            <title>Ropa la Fanny</title>
+        
+        <!-- Icono de acceso directo y pantalla completa -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="mobile-web-app-capable" content="yes">
+        
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css" /> 
+        
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="http:////code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+        <link rel="icon" sizes="196x196" href="https://icon-icons.com/icons2/38/PNG/512/pants_4789.png">
+        <link rel="shotcut-icon" sizes="196x196" href="https://icon-icons.com/icons2/38/PNG/512/pants_4789.png">
+        
+        <!-- Script para iconos externos -->
+        <link href="https://unpkg.com/ionicons@4.4.4/dist/css/ionicons.min.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <ons-page>
+            <div style="text-align: center; margin-top: 30px;">
+                <ons-navigator swipeable id="hola">
+                    <br>
+                    <img src="https://icon-icons.com/icons2/38/PNG/512/pants_4789.png" height="200" width="200">
+                    <h1>Ropa la Fanny</h1>
+    
+                    <p> <ons-input id="username" modifier="underbar" placeholder="Usuario" float></ons-input> </p>
+                    <p> <ons-input id="password" modifier="underbar" type="password" placeholder="Contraseña" float></ons-input> </p>
+    
+                    <p style="margin-top: 30px;">
+                        <ons-button modifier="outline" onclick="login()">Ingresar</ons-button>
+                    </p>
+                    
+                    <script>
+                        var login = function() {
+                            var username = document.getElementById('username').value;
+                            var password = document.getElementById('password').value;
+    
+                            xmlhttp = new XMLHttpRequest();
+                            xmlhttp.onreadystatechange = function() {
+                                if (this.readyState == 4 && this.status == 200) {
+                                    if(this.responseText==1){
+                                        ons.notification.alert('Administrador');
+                                        //document.querySelector('#hola').pushPage('https://ropalafanny.000webhostapp.com/home.html');
+                                    }else{
+                                        ons.notification.alert('Usuario o contraseña son incorrectos');
+                                    }
+                                }
+                            };
+                            xmlhttp.open("GET", "https://ropalafanny.000webhostapp.com/Login.php?nombre=" + username + "&contrasena=" + password, true);
+                            xmlhttp.send();
+                        };               
+                    </script> 
+                </ons-navigator>
+            </div>
+        </ons-page>
+    </body>
+</html>
